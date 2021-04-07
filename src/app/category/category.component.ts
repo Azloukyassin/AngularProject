@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { category } from '../category';
 import { MyServiceService } from '../my-service.service';
 
 @Component({
@@ -7,11 +8,14 @@ import { MyServiceService } from '../my-service.service';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
+  cat:category= new category(0,"Unknow"); 
 
   constructor(private service:MyServiceService) { }
 
   ngOnInit(){
    this.service.sayHello("Category");
   }
-
+  onSubmit(){
+    console.log(this.cat);
+  }
 }
